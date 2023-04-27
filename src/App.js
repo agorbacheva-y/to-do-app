@@ -46,10 +46,12 @@ function App() {
       </form>
 
       {todo.map((todo) => {
-        <div key={todo.id} className="todo-card">
-          <p>{todo.text}</p>
-          <button>Delete</button>
-        </div>
+        return (
+          <div key={todo.id} className="todo-card">
+            <p>{todo.text}</p>
+            <button>Delete</button>
+          </div>
+        );
       })}
     </div>
   );

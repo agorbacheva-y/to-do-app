@@ -35,8 +35,10 @@ function App() {
 
     // remove todo when complete/click delete button
 
-    // QUESTION what does this tell react to do? filter thru todo array, pick out items where
-    // todo.id is not equal to id?? where does it say remove todo???
+    // QUESTION what does this tell react to do? 
+    // delete button onclick gets todo.id of todo that was clicked
+    // filter thru todo array, pick out item where
+    // todo.id is not equal to id (callback function)
     const removeTodo = (id) => {
       setTodo(todo.filter((todo) => todo.id !== id));
     }
@@ -50,8 +52,8 @@ function App() {
     }, []);
 
     // useEffect to store todos in localStorage
-    // if component mounted for first time log "true" and set firstRender to false
-    // else store item todo array in localStorage and log "not first pg load"
+    // if component mounted for first time log true and set firstRender to false
+    // else store item todo array in localStorage and log not first pg load 
     useEffect(() => {
       if (firstRender.current) {
         console.log("true");

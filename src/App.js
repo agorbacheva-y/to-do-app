@@ -31,6 +31,30 @@ function App() {
     setInputValue("");
   };
 
+    // remove todo when complete/click delete button
+    const removeTodo = (id) => {
+      setTodo(todo.filter((todo) => todo.id !== id));
+    }
+
+    // useEffect to grab todos from localStorage
+    useEffect(() => {
+      if (localStorage.getItem("todo") !== null) {
+        const newTodo = localStorage.getItem("todo");
+        setTodo(JSON.parse([...todo, newTodo]));
+      }
+    }, []);
+
+    // useEffect to store todos in localStorage
+    useEffect(() => {
+      if (firstRender.current) {
+        console.log("true");
+        firstRender.current = false;
+      } else {
+        localStorage.setItem("todo", JSON.stringify([...todo]));
+        console.log("not the first page load");
+      }
+    }, [todo]);
+
   return (
     <div className="container">
       <h1>To Do List</h1>
@@ -49,7 +73,7 @@ function App() {
         return (
           <div key={todo.id} className="todo-card">
             <p>{todo.text}</p>
-            <button>Delete</button>
+            <button onClick={() => removeTodo(todo.id)}>Delete</button>
           </div>
         );
       })}

@@ -11,13 +11,15 @@ function App() {
   // state to store to dos
   const [ todo, setTodo ] = useState([]);
 
-  // function for onSubmit
+  // main function
   const addTodo = (e) => {
     e.preventDefault();
 
+    // .trim() removes whitespace from input and returns new string
+    // if input is empty return
     if (inputValue.trim() === "") return;
 
-    // grab all props in todo from before and add new props
+    // grab all props in todo and add new props, text and id
     // add unique id because items will be added and removed
     setTodo([
       ...todo,
@@ -32,6 +34,9 @@ function App() {
   };
 
     // remove todo when complete/click delete button
+
+    // QUESTION what does this tell react to do? filter thru todo array, pick out items where
+    // todo.id is not equal to id?? where does it say remove todo???
     const removeTodo = (id) => {
       setTodo(todo.filter((todo) => todo.id !== id));
     }
@@ -45,6 +50,8 @@ function App() {
     }, []);
 
     // useEffect to store todos in localStorage
+    // if component mounted for first time log "true" and set firstRender to false
+    // else store item todo array in localStorage and log "not first pg load"
     useEffect(() => {
       if (firstRender.current) {
         console.log("true");

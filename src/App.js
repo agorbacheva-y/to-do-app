@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
+import Fetch from "./Fetch.js";
 
 function App() {
   // check if mounting component for the first time or not
@@ -66,6 +67,7 @@ function App() {
 
   return (
     <div className="container">
+      <Fetch />
       <h1>To Do List</h1>
       <form onSubmit={addTodo}>
         <input 

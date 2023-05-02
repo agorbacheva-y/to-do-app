@@ -1,0 +1,25 @@
+{
+  "todo": [
+    {
+      "id": 1,
+      "title": "Laundry",
+      "taks": "Do the laundry at 14.00",
+      "day": "Wednesday",
+      "done": false
+    },
+    {
+      "id": 2,
+      "title": "Meeting",
+      "taks": "Lunch meeting with client",
+      "day": "Thursday",
+      "done": false
+    },
+    {
+      "id": 3,
+      "title": "Hair dresser",
+      "taks": "Hair dresser at 15.30",
+      "day": "Monday",
+      "done": false
+    }
+  ]
+}

@@ -1,4 +1,11 @@
 {
+  "users": [
+    {
+      "name": "test",
+      "email": "test@email.com",
+      "password": "12345"
+    }
+  ],
   "todo": [
     {
       "id": 1,

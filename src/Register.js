@@ -32,7 +32,7 @@ const handleSubmit = async () => {
   return (
     <div className="container">
       <Card>
-        <form className="form-container">
+        <form className="form-container" onSubmit={handleSubmit}>
           <h1>Register User</h1>
           <label>
             <input 
@@ -63,7 +63,7 @@ const handleSubmit = async () => {
           <button 
             className="btn"
             type="submit"
-            onClick={handleSubmit} 
+            // onClick={handleSubmit} 
           >
             <p>Register</p>
           </button>

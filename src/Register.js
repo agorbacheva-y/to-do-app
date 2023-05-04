@@ -11,14 +11,15 @@ const [ password, setPassword ] = useState("");
 // helper function used in submit function to check if email is already registered
 const checkEmail = (users) => {
   const user = users.find((user) => user.email === email);
-  if (user) return user;
+  if (users) return user;
 };
 
  // what happens when click register button
-const handleSubmit = async () => {
+const handleSubmit = async (e) => {
+  e.preventDefault();
   const user = await axios
   .get("/users") // get users from database (request)
-  .then((res) => checkEmail(res.data, email)); // and check from results if email already exists
+  .then((res) => checkEmail(res.data)); // and check from results if email already exists
 
   if (user) {
     alert("User already exists"); // if email already exists, alert
@@ -63,7 +64,6 @@ const handleSubmit = async () => {
           <button 
             className="btn"
             type="submit"
-            // onClick={handleSubmit} 
           >
             <p>Register</p>
           </button>

@@ -1,12 +1,13 @@
 import { useState } from "react";
+import Card from "./Card";
 
 const Item = ( {todo} ) => {
 
   return (
-    <div className="todo-card">
+    <Card reverse={true}>
       <div className="title">{todo.title}</div>
       <div className="task">{todo.task}</div>
-    </div>
+    </Card>
   );
 };
 

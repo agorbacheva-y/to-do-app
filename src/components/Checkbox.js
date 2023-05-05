@@ -13,4 +13,4 @@ const Checkbox = ({ label, value, onChange }) => {
 
 export default Checkbox;
 
-// pass props: label, value
+// pass props: label, value, onChange

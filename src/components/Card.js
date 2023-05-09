@@ -7,7 +7,7 @@ const Card = ({ children, reverse, create }) => {
       style={{
         // if reverse is true set card color to white, if false gray
         backgroundColor: reverse ? "#ffffff" : "#1c1c1c",
-        //backgroundColor: create ? "#2E2E2E" : "#1c1c1c",
+        backgroundColor: create ? "#2E2E2E" : "#1c1c1c",
         color: reverse ? "#000000" : "#ffffff",
         padding: create ? "4rem" : "3rem",
       }}

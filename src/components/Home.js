@@ -1,6 +1,7 @@
 import { useState } from "react";
 import todoData from "../data/TodoData.js";
 import List from "./List.js";
+import Form from "./Form.js";
 
 const Home = () => {
   // state for todo data
@@ -8,6 +9,7 @@ const Home = () => {
 
   return (
     <div className="container">
+      <Form />
       <List todo={todo} />
     </div>
   );

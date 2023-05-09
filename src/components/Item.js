@@ -3,7 +3,7 @@ import Card from "./Card";
 import Checkbox from "./Checkbox";
 import { MdDeleteForever, MdEdit, MdOutlineCalendarToday } from "react-icons/md";
 
-const Item = ( {todo} ) => {
+const Item = ({ todo, handleDelete, editTodo }) => {
   const [ done, setDone ] = useState(todo.done);
 
   const handleChange = (e) => {
@@ -16,8 +16,8 @@ const Item = ( {todo} ) => {
         <div className="flex-container">
           <div className="title">{todo.title}</div>
           <div className="btns">
-            <MdEdit style={{ color: "#f7cd62", marginRight: ".5rem"}} />
-            <MdDeleteForever style={{ color: "#ed844f"}} />
+            <MdEdit style={{ color: "#f7cd62", marginRight: ".5rem"}} onClick={() => editTodo(todo)} />
+            <MdDeleteForever style={{ color: "#ed844f"}} onClick={() => handleDelete} />
           </div>
         </div>
 

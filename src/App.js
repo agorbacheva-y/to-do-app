@@ -4,12 +4,14 @@ import Navbar from "./components/Navbar.js";
 import Todo from "./components/Todo.js";
 import Login from "./components/Login.js"
 import Home from "./components/Home.js"
+import Header from "./components/Header.js";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
+      <Header />
 
       <Routes>
         <Route path="/" element={<Home />} />

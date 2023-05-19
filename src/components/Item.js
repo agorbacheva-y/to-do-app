@@ -17,7 +17,7 @@ const Item = ({ todo, handleDelete, editTodo }) => {
           <div className="title">{todo.title}</div>
           <div className="btns">
             <MdEdit style={{ color: "#f7cd62", marginRight: ".5rem"}} onClick={() => editTodo(todo)} />
-            <MdDeleteForever style={{ color: "#ed844f"}} onClick={() => handleDelete} />
+            <MdDeleteForever style={{ color: "#ed844f"}} onClick={() => handleDelete(todo.id)} />
           </div>
         </div>
 

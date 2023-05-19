@@ -2,25 +2,45 @@ import Card from "./Card";
 import Button from "./Button";
 import { useState } from "react";
 
-const Form = () => {
+const Form = ({ addTodo }) => {
+  const [ title, setTitle ] = useState("");
+  const [ task, setTask ] = useState("");
+  const [ day, setDay ] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const newTodo = {
+      title,
+      task,
+      day
+    }
+
+    addTodo(newTodo);
+    console.log(newTodo);
+    setTitle("");
+    setTask("");
+    setDay("");
+  }
+
   return (
     <Card create={true}>
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-container">
           <h1>Add a new Todo</h1>
             <label>
               <p>Title</p>
-              <input type="text" />
+              <input type="text" value={title} onChange={(e) => setTitle(e.target.value)}/>
             </label>
 
             <label>
               <p>Task</p>
-              <input type="text" />
+              <input type="text" value={task} onChange={(e) => setTask(e.target.value)} />
             </label>
 
             <label>
               <p>Day</p>
-              <select>
+              <select value={day} onChange={(e) => setDay(e.target.value)} >
                 <option value="" disabled={true}>Select Day</option>
                 <option value="Monday">Monday</option>
                 <option value="Tuesday">Tuesday</option>

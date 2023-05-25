@@ -1,4 +1,3 @@
-import Fetch from "./components/Fetch.js";
 import Register from "./components/Register.js";
 import Navbar from "./components/Navbar.js";
 import Todo from "./components/Todo.js";

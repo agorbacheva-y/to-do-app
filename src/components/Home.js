@@ -1,6 +1,5 @@
 import { useState, useEffect } from "react";
 import {v4 as uuidv4} from "uuid";
-import todoData from "../data/TodoData.js";
 import List from "./List.js";
 import Form from "./Form.js";
 
@@ -19,12 +18,6 @@ const Home = () => {
 
     setTodo(data); // store data in state
   }
-
-
-
-
-
-
 
   const addTodo = (newTodo) => {
     newTodo.id = uuidv4();
